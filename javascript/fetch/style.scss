@@ -1,0 +1,148 @@
+$text_dark: rgb(69, 77, 84);
+$text_light: rgb(242, 242, 243);
+$bg_light: rgb(221, 221, 221);
+$bg_dark: rgb(5, 26, 46);
+$shadow_color_light: rgb(37, 38, 39);
+$shadow_color_dark: rgb(3, 4, 7);
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: $bg_light;
+    color: $text_dark;
+    font-family: -apple-system, 'Segoe UI', Oxygen, Ubuntu, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(37, 166, 189);
+}
+
+ul, ol {
+    list-style: none;
+}
+
+input {
+    border: none;
+    outline: none;
+}
+
+.wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 90%;
+}
+
+.flex_wrapper {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: wrap;
+    @media (max-width: 800px) {
+        flex-direction: column;
+    }
+}
+
+header {
+    width: 100%;
+    height: 70px;
+    background: $bg_dark;
+    color: $text_light;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    h1 {
+        color: rgb(255, 0, 64);
+        font-size: 40px;
+        font-weight: 700;
+    }
+}
+
+section#spotlight {
+    div.wrapper {
+        ul.users {
+            flex: 50%;
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+            gap: 2rem;
+            margin: 3rem 0;
+            margin-right: 20px;
+            @media (max-width: 800px) {
+                flex-direction: column;
+                margin-right: 0;
+            }
+            li.user {
+                // width: 20rem;
+                // margin: 0 auto;
+                flex: 1;
+                box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+                padding: 30px;
+                border-radius: 4px;
+                background: #fafafa;
+                img {
+                    display: block;
+                    width: 5rem;
+                    height: 5rem;
+                    border-radius: 50%;
+                    margin-bottom: 1rem;
+                }
+                h3 {
+                    font-size: 20px;
+                    margin-bottom: 1rem;
+                }
+                a {
+                    display: block;
+                }
+            }
+        }
+
+        div.login {
+            flex: 50%;
+            margin: 3rem 0;
+            fieldset {
+                width: 100%;
+                padding: 30px;
+                border: 2px solid teal;
+                legend {
+                    font-size: 20px;
+                    font-weight: 600;
+                    color: tomato;
+                    padding: 0 5px;
+                }
+            }
+            form {
+                input {
+                    display: block;
+                    border: 2px solid dodgerblue;
+                    margin-bottom: 1rem;
+                    padding: 6px 5px;
+                    box-shadow: rgba(30, 143, 255, 0.185) 1.95px 1.95px 2.6px;
+                    border-radius: 6px;
+                    font-size: 18px;
+                    font-weight: 500;
+                    width: 100%;
+                    &[type=submit]{
+                        background: rgba(155, 148, 148, 0.39);
+                        outline: none;
+                        border: none;
+                        border-radius: 2px;
+                        cursor: pointer;
+                        box-shadow: rgba(155, 148, 148, 0.39) 1.95px 1.95px 2.6px;
+                    }
+                }
+            }
+        }
+
+        @media (max-width: 800px) {
+            ul.users, div.login {
+                flex: 100%;
+            }
+        }
+    }
+}
